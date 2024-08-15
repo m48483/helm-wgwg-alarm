@@ -77,7 +77,7 @@ resources:
 
 livenessProbe:
   httpGet:
-    path: /
+    path: /alarm
     port: 8000 # http 대신 8000으로 수정
   initialDelaySeconds: 60
   timeoutSeconds: 10
@@ -85,7 +85,7 @@ livenessProbe:
   failureThreshold: 5
 readinessProbe:
   httpGet:
-    path: /
+    path: /alarm
     port: 8000 # http 대신 8000으로 수정
   initialDelaySeconds: 60
   timeoutSeconds: 10
