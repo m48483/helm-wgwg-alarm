@@ -56,7 +56,7 @@ ingress:
     nginx.ingress.kubernetes.io/upgrade: "websocket"
     nginx.ingress.kubernetes.io/connection-proxy-header: "keep-alive"
   hosts:
-    - host: 34.72.222.47
+    - host: 34.72.222.47.nip.io
       paths:
         - path: /alarm/(.*)
           pathType: ImplementationSpecific
