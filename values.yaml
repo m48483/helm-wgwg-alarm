@@ -46,20 +46,21 @@ service:
   port: 8000
 
 ingress:
-  enabled: false
+  enabled: true # Ingress 활성화
   className: "nginx"
   annotations:
     kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1 # 경로 재작성
+    # kubernetes.io/tls-acme: "true"  # Let's Encrypt를 통한 자동 인증서 발급
   hosts:
-    # - host: chart-example.local
-    paths:
-      - path: /alarm
-        pathType: Prefix
+    - host: your-domain.com # 실제 사용하려는 도메인 이름으로 변경
+      paths:
+        - path: /alarm/(.*) # /alarm 경로를 포함한 모든 하위 경로에 대해 트래픽을 전달
+          pathType: ImplementationSpecific # 구체적인 경로 매칭 방식 지정
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
-  #      - chart-example.local
+  #      - your-domain.com  # TLS 인증서를 사용하는 도메인 이름
 
 resources:
   {}
