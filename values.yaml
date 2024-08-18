@@ -57,7 +57,7 @@ ingress:
     nginx.ingress.kubernetes.io/connection-proxy-header: "keep-alive"
   hosts:
     - paths:
-        - path: /alarm/(.*)
+        - path: /alarm
           pathType: Prefix
   tls: []
 
