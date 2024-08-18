@@ -56,7 +56,8 @@ ingress:
     nginx.ingress.kubernetes.io/upgrade: "websocket"
     nginx.ingress.kubernetes.io/connection-proxy-header: "keep-alive"
   hosts:
-    - paths:
+    - host: "34.41.123.200.nip.io" # IP 주소를 기반으로 한 도메인
+      paths:
         - path: /alarm
           pathType: Prefix
   tls: []
