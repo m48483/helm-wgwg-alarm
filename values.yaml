@@ -58,7 +58,7 @@ ingress:
   hosts:
     - paths:
         - path: /alarm/(.*)
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
 
   #  - secretName: chart-example-tls
